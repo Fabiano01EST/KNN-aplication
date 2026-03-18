@@ -1,76 +1,68 @@
-🚗 Classificação de Acidentes de Trânsito na Paraíba utilizando KNN
-📌 Visão Geral
 
-Este projeto tem como objetivo desenvolver um modelo de classificação supervisionada para prever a gravidade de acidentes de trânsito no estado da Paraíba, a partir de dados oficiais disponibilizados pela Polícia Rodoviária Federal (PRF).
+# Análise de Acidentes de Trânsito com KNN
 
-A abordagem adotada utiliza o algoritmo K-Nearest Neighbors (KNN), explorando padrões presentes nas características dos acidentes para inferir sua classificação.
+## Descrição do Projeto
 
-📊 Fonte de Dados
+Este repositório apresenta a aplicação do algoritmo K-Nearest Neighbors (KNN) para análise de dados de acidentes de trânsito. O estudo foi desenvolvido com o objetivo de explorar padrões nos dados, identificar relações entre variáveis e realizar a classificação da gravidade dos acidentes a partir das características observadas.
 
-Os dados foram obtidos por meio do portal de dados abertos da PRF:
+A implementação completa da análise está disponível no notebook:
+👉 [https://github.com/Fabiano01EST/KNN-aplication/blob/main/GLM2.ipynb](https://github.com/Fabiano01EST/KNN-aplication/blob/main/GLM2.ipynb)
 
-🔗 https://www.gov.br/prf/pt-br/acesso-a-informacao/dados-abertos/dados-abertos-da-prf
+---
 
-O conjunto contém informações detalhadas sobre ocorrências de acidentes em rodovias federais brasileiras.
+## Base de Dados
 
-🎯 Objetivo do Modelo
+Os dados utilizados correspondem a registros de acidentes de trânsito, contendo informações sobre características dos envolvidos, condições do acidente e variáveis associadas à severidade.
 
-Construir um modelo capaz de prever a variável:
+O conjunto de dados reúne variáveis como idade, sexo, tipo de envolvido, tipo de acidente e outras características relevantes, permitindo analisar fatores associados à classificação dos acidentes.
 
-classificacao_acidente
+---
 
-com base em atributos observacionais relacionados ao contexto do acidente.
+## Estrutura da Análise
 
-🧾 Variáveis Explicativas
+A análise foi conduzida de forma sequencial, contemplando as seguintes etapas:
 
-Foram selecionadas variáveis categóricas relevantes do ponto de vista operacional e interpretativo:
+### 1. Preparação dos Dados
 
-sexo
+Inicialmente, foi realizada a organização da base, incluindo:
 
-tipo_envolvido
+* Tratamento de valores ausentes;
+* Ajuste de tipos das variáveis;
+* Codificação de variáveis categóricas;
+* Padronização dos dados para aplicação do modelo.
 
-tipo_acidente
+### 2. Análise Exploratória
 
-condicao_metereologica
+Na etapa exploratória, foram utilizadas medidas descritivas e visualizações gráficas com o objetivo de compreender o comportamento das variáveis e a distribuição das classes.
 
-fase_dia
+Essa etapa permitiu identificar possíveis padrões e desequilíbrios entre categorias, contribuindo para uma melhor compreensão do problema de classificação.
 
-estado_fisico
+### 3. Modelagem
 
-Essas variáveis capturam aspectos comportamentais, ambientais e circunstanciais associados aos acidentes.
+A modelagem foi realizada utilizando o algoritmo KNN, que classifica as observações com base na similaridade entre os dados. O modelo foi ajustado a partir de um conjunto de treinamento, utilizando variáveis selecionadas na etapa exploratória.
 
-⚙️ Metodologia
+Adicionalmente, foi realizada a escolha do parâmetro (k), responsável por definir o número de vizinhos considerados na classificação, buscando melhorar o desempenho do modelo. ([Gist][1])
 
-A construção do modelo seguiu as seguintes etapas:
+### 4. Avaliação
 
-Aquisição e carregamento dos dados
+Após o ajuste do modelo, foram analisados:
 
-Pré-processamento, incluindo tratamento de valores ausentes e codificação de variáveis categóricas
+* A matriz de confusão;
+* Métricas de desempenho, como acurácia;
+* O comportamento das classificações realizadas pelo modelo.
 
-Seleção de atributos com base em relevância prática
+Essa etapa permitiu avaliar a capacidade preditiva do modelo e identificar possíveis limitações na classificação.
 
-Divisão dos dados em conjuntos de treino e teste
+---
 
-Treinamento do modelo KNN
+## Organização do Repositório
 
-Avaliação de desempenho utilizando métricas de classificação
+* `GLM2.ipynb`: contém toda a implementação da análise, incluindo preparação dos dados, modelagem e avaliação dos resultados.
 
-O algoritmo KNN foi escolhido por sua simplicidade, interpretabilidade e eficiência em problemas com estruturas de proximidade bem definidas.
+---
 
-📈 Resultados
+## Considerações
 
-O modelo apresentou desempenho consistente no conjunto de teste:
+Este projeto possui caráter aplicado, com foco na utilização de técnicas de aprendizado de máquina para análise de dados reais. A abordagem adotada permite identificar padrões relevantes em acidentes de trânsito e fornece uma base estruturada para aplicações futuras em problemas de classificação.
 
-Acurácia: 84%
-
-Esse resultado indica boa capacidade preditiva, considerando a natureza categórica e potencialmente desbalanceada dos dados.
-
-📊 Avaliação
-
-A avaliação do modelo foi conduzida com base em:
-
-Matriz de confusão
-
-Acurácia global
-
-Análises adicionais podem incluir métricas como precisão, recall e F1-score para melhor compreensão do desempenho por classe.
+---
